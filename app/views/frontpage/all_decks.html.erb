@@ -1,0 +1,16 @@
+<h1>Welcome to Flashcards!</h1>
+<p><%= current_user.username.capitalize %>'s Decks</p>
+
+<div class="well">
+	<% @decks.each do |deck| %>
+		<% if deck.user_id == current_user.id %>
+		<%= deck.deck_name %> <br />
+		
+		<% end %>
+	<% end %>
+	
+</div>
+
+<h3>Create a new deck</h3>
+<%= link_to 'New Deck', new_deck_path %>
+
