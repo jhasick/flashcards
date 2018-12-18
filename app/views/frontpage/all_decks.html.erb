@@ -6,10 +6,9 @@
 	<% if deck.user_id == current_user.id %>
 	<div class="col-md-4">
 		<div class="well">
-			<strong>Deck ID: <%= deck.deck_id %></strong> <br/>
 			<strong>Deck Name: <%= deck.deck_name %></strong> <br/>
-			<%= link_to 'Show Cards', cardsbydeck_path(deck_id: deck.deck_id) %>
-			<%= link_to 'New Card', new_card_path %>
+			<%= link_to 'Show Cards', cardsbydeck_path(deck_id: deck.id) %><br/>
+			<%= link_to 'New Card', new_card_path(deck_id: deck.id) %>
 		</div>
 	</div>
 		<% end %>

@@ -2,22 +2,22 @@
 	   <% @cards.each do |card| %>
     <div class="col-md-4">
       <div class="well">
-        <strong><%= card.card_id %></strong>
+        
         
         <p><%= card.front %></p>
-        <a href="#" data-toggle="modal" data-target="#myModal_<%= card.id %>">
+        <a href="#" data-toggle="modal" data-target="#myModal_<%= card.card_id %>">
           <span class="glyphicon glyphicon-plus"></span> Answer
         </a>
       </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal_<%= card.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="myModal_<%= card.card_id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel"><%= card.card_id %></h4>
+            <h4 class="modal-title" id="myModalLabel">Answer:</h4>
           </div>
           <div class="modal-body">
         
