@@ -1,14 +1,19 @@
 <h1>Welcome to Flashcards!</h1>
 <p><%= current_user.username.capitalize %>'s Decks</p>
 
-<div class="well">
+<div class="row">
 	<% @decks.each do |deck| %>
-		<% if deck.user_id == current_user.id %>
-		<%= deck.deck_name %> <br />
-		<%= link_to 'Cards', cardsbydeck_path(deck_id: deck.deck_id) %>
+	<% if deck.user_id == current_user.id %>
+	<div class="col-md-4">
+		<div class="well">
+			<strong>Deck ID: <%= deck.deck_id %></strong> <br/>
+			<strong>Deck Name: <%= deck.deck_name %></strong> <br/>
+			<%= link_to 'Show Cards', cardsbydeck_path(deck_id: deck.deck_id) %>
+			<%= link_to 'New Card', new_card_path %>
+		</div>
+	</div>
 		<% end %>
-	<% end %>
-	
+	<% end %>	
 </div>
 
 <h3>Create a new deck</h3>
