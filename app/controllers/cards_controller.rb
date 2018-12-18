@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
+  before_action :cards_by_deck
 
   # GET /cards
   # GET /cards.json
@@ -71,4 +72,10 @@ class CardsController < ApplicationController
     def card_params
       params.require(:card).permit(:card_id, :deck_id, :front, :back)
     end
+
+    def cards_by_deck
+      @cards = Card.where(deck_id: params[:deck_id])
+      @deck_id = params[:deck_id]
+    end
+
 end

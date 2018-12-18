@@ -5,7 +5,7 @@
 	<% @decks.each do |deck| %>
 		<% if deck.user_id == current_user.id %>
 		<%= deck.deck_name %> <br />
-		
+		<%= link_to 'Cards', cardsbydeck_path(deck_id: deck.deck_id) %>
 		<% end %>
 	<% end %>
 	
