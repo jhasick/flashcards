@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'frontpage' => 'frontpage#all_decks'
   get 'cardsbydeck' => 'cards#cards_by_deck'
+  get 'add_card' => 'cards#add_card'
   resources :cards
   resources :decks
   devise_for :users

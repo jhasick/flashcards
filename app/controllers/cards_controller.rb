@@ -13,6 +13,10 @@ class CardsController < ApplicationController
   def show
   end
 
+  def add_card
+    @card = Card.new
+  end
+
   # GET /cards/new
   def new
     @card = Card.new
