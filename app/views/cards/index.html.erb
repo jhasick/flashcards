@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Card</th>
       <th>Deck</th>
       <th>Front</th>
       <th>Back</th>
@@ -16,8 +15,7 @@
   <tbody>
     <% @cards.each do |card| %>
       <tr>
-        <td><%= card.card_id %></td>
-        <td><%= card.deck_id %></td>
+        <td><%= card.deck.deck_name %></td>
         <td><%= card.front %></td>
         <td><%= card.back %></td>
         <td><%= link_to 'Show', card %></td>
