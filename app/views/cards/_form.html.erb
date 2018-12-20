@@ -14,12 +14,14 @@
   
 
   <div class="field">
+    
     <% if @deck_id == nil %>
     <%= form.label :deck_id %>
     <%= form.number_field :deck_id %>
     <% else %>
-    <%= form.label :deck_id %>
-    <%= @deck_id %>
+    
+    <%= form.hidden_field :deck_id, value: @deck_id %>
+    
     <% end %>
   </div>
 
