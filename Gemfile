@@ -66,3 +66,8 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'devise'
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'aws-sdk', '~> 2.3'
+end
