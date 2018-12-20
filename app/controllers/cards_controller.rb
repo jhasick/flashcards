@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
   before_action :cards_by_deck
+  before_action :authenticate_user!
 
   # GET /cards
   # GET /cards.json
